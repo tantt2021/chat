@@ -21,7 +21,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "gender", columnDefinition = "ENUM('Male', 'Female', 'Unknown') DEFAULT 'Unknown'")
-    private Gender gender = Gender.Unknown;
+    private Gender gender;
 
     @Column(name = "region")
     private String region;
@@ -29,7 +29,7 @@ public class User {
     @Column(name = "language")
     private String language;
 
-    @Column(name = "registration_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "registration_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",updatable = false)
     private Timestamp registrationTime;
 
     @Column(name = "phone_number")
